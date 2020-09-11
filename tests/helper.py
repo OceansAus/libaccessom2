@@ -129,6 +129,9 @@ class Helper:
         with open(os.path.join(my_dir, 'log', 'all.log'), 'w') as f:
             f.write(log)
 
+        # Restore state
+        os.chdir(cur_dir)
+
         return retcode, output.decode('utf-8'), log, matm_log
 
 if __name__ == '__main__':
